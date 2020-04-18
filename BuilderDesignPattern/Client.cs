@@ -8,10 +8,26 @@ namespace BuilderDesignPattern
     {
         private static void Main(string[] args)
         {
-            PizzaFactory pizzaFactory = new PizzaFactory();
+            PizzaDirector pizzaFactory = new PizzaDirector();
             var selectedPizza = pizzaFactory.Build(new MargaritaBuilder());
-            Console.WriteLine($" You have selected {selectedPizza.Name} pizza \n Description : {selectedPizza.Description}" +
-                              $"\n Price : {selectedPizza.Price} \n Toppings: {string.Join(',', selectedPizza.Toppings)}");
+
+            if (selectedPizza != null)
+            {
+                Console.WriteLine($" You have selected {selectedPizza.Name} pizza");
+
+                if (!string.IsNullOrEmpty(selectedPizza.Description))
+                {
+                    Console.WriteLine($"\n Description: { selectedPizza.Description}");
+                }
+                if (selectedPizza.Price > 0)
+                {
+                    Console.WriteLine($"\n Price : {selectedPizza.Price} ");
+                }
+                if (selectedPizza.Toppings != null)
+                {
+                    Console.WriteLine($"\n Toppings: {string.Join(',', selectedPizza.Toppings)}");
+                }
+            }
         }
     }
 }

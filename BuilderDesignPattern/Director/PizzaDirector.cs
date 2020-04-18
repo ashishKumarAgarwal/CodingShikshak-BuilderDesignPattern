@@ -6,7 +6,7 @@ using BuilderDesignPattern.Product;
 
 namespace BuilderDesignPattern.Director
 {
-    class PizzaFactory
+    class PizzaDirector
     {
         public Pizza Build(IPizzaBuilder builder)
         {
