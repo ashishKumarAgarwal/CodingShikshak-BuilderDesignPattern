@@ -1,24 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using BuilderDesignPattern.Builders;
+﻿using BuilderDesignPattern.Builders;
 using BuilderDesignPattern.Product;
 
 namespace BuilderDesignPattern.Director
 {
-    class PizzaDirector
+    internal class PizzaDirector
     {
         public Pizza Build(IPizzaBuilder builder)
         {
-          builder.SetName();
-          builder.SetDescription();
-          builder.SetPrice();
-          builder.SetToppings();
-          return builder.GetPizza();
-
+            builder.SetName()
+                   .SetDescription()
+                  .SetPrice()
+                  .SetToppings();
+            return builder.GetPizza();
         }
-
     }
-
-  
 }

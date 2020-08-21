@@ -4,13 +4,13 @@ namespace BuilderDesignPattern.Builders
 {
     public interface IPizzaBuilder
     {
-        void SetName();
+        IPizzaBuilder SetName();
 
-        void SetPrice();
+        IPizzaBuilder SetPrice();
 
-        void SetDescription();
+        IPizzaBuilder SetDescription();
 
-        void SetToppings();
+        IPizzaBuilder SetToppings();
 
         Pizza GetPizza();
     }

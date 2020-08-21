@@ -1,31 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using BuilderDesignPattern.Product;
+﻿using BuilderDesignPattern.Product;
 
 namespace BuilderDesignPattern.Builders
 {
-    class FarmHouseBuilder : IPizzaBuilder
+    internal class FarmHouseBuilder : IPizzaBuilder
     {
-        private readonly Pizza _pizza=new Pizza();
-        public void SetName()
+        private readonly Pizza _pizza = new Pizza();
+
+        public IPizzaBuilder SetName()
         {
             _pizza.Name = "Farm House";
+            return this;
         }
 
-        public void SetPrice()
+        public IPizzaBuilder SetPrice()
         {
             _pizza.Price = 500;
+            return this;
         }
 
-        public void SetDescription()
+        public IPizzaBuilder SetDescription()
         {
             _pizza.Description = "Farm House medium size pizza";
+            return this;
         }
 
-        public void SetToppings()
+        public IPizzaBuilder SetToppings()
         {
-            _pizza.Toppings = new[] { "Tomato","Capsicum","Mushroom","Cheese"};
+            _pizza.Toppings = new[] { "Tomato", "Capsicum", "Mushroom", "Cheese" };
+            return this;
         }
 
         public Pizza GetPizza()
